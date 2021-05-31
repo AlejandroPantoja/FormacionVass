@@ -9,6 +9,7 @@ History
 
 21/01/2021    	Saúl Alarcón             Nueva clase que se utilizara para actualizar el estado de las oportunidades
 										 relacionadas con las quotes autorizadas
+ 31/05/2021                              Aljandro Pantoja         Formacion
 ---------------------------------------------------------------------------------------------------------------*/
 
 public class ACP_QuoteAutorizada_Controller {
@@ -21,6 +22,8 @@ public class ACP_QuoteAutorizada_Controller {
                 opportunitysIds.containsKey(quo.NE__Opportunity__c) && opportunitysIds.get(quo.NE__Opportunity__c)){
                    opportunitysIds.put(quo.NE__Opportunity__c, quo.ROS_Aprobaci_n_Comercial_Autorizada__c);
             }
+
+            //Formacion
         }
         // Nos quedamos solo con las autorizadas
         List<Id> ids = new List<Id>();
@@ -34,8 +37,7 @@ public class ACP_QuoteAutorizada_Controller {
         for(Opportunity op : opportunitiesToUpdate){
             op.GE_Finished_Aproval__c = true;
             op.ROS_Aprobacion_curso__c = false;
-            op.ROS_WF_aprobaci_n_en_curso__c = false;
-            op.ROS_WF_autorizaci_n_comercial__c = true;
+            
         }
         update opportunitiesToUpdate;
     }*/
@@ -56,6 +58,8 @@ public class ACP_QuoteAutorizada_Controller {
                                               AND ROS_Estado__c = 'En Negociación'];
         //List<NE__OrderItem__c> OIsUpdate = [SELECT Id,ROS_Estado__c FROM Punto_Agrupado__c WHERE GE_Related_Quote__c in :OfertasCaducadas ];
         //List<Lote__c> LotesOfertas = new List<Lote__c>();
+        //Formacion Alex
+        //Formacion Alex 2
         for(Punto_Agrupado__c cmp : CMPsUpdate){ cmp.ROS_Estado__c = 'Anulado';
         }
         Database.SaveResult[] results = Database.update(CMPsUpdate);
