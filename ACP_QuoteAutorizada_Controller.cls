@@ -58,6 +58,8 @@ public class ACP_QuoteAutorizada_Controller {
                                               AND ROS_Estado__c = 'En Negociación'];
         //List<NE__OrderItem__c> OIsUpdate = [SELECT Id,ROS_Estado__c FROM Punto_Agrupado__c WHERE GE_Related_Quote__c in :OfertasCaducadas ];
         //List<Lote__c> LotesOfertas = new List<Lote__c>();
+        //Formacion Alex
+        //Formacion Alex 2
         for(Punto_Agrupado__c cmp : CMPsUpdate){ cmp.ROS_Estado__c = 'Anulado';
         }
         Database.SaveResult[] results = Database.update(CMPsUpdate);
