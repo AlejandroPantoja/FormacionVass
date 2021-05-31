@@ -9,6 +9,7 @@ History
 
 21/01/2021    	Saúl Alarcón             Nueva clase que se utilizara para actualizar el estado de las oportunidades
 										 relacionadas con las quotes autorizadas
+                Aljandro Pantoja         Formacion
 ---------------------------------------------------------------------------------------------------------------*/
 
 public class ACP_QuoteAutorizada_Controller {
@@ -21,6 +22,8 @@ public class ACP_QuoteAutorizada_Controller {
                 opportunitysIds.containsKey(quo.NE__Opportunity__c) && opportunitysIds.get(quo.NE__Opportunity__c)){
                    opportunitysIds.put(quo.NE__Opportunity__c, quo.ROS_Aprobaci_n_Comercial_Autorizada__c);
             }
+
+            //Formacion
         }
         // Nos quedamos solo con las autorizadas
         List<Id> ids = new List<Id>();
@@ -34,8 +37,7 @@ public class ACP_QuoteAutorizada_Controller {
         for(Opportunity op : opportunitiesToUpdate){
             op.GE_Finished_Aproval__c = true;
             op.ROS_Aprobacion_curso__c = false;
-            op.ROS_WF_aprobaci_n_en_curso__c = false;
-            op.ROS_WF_autorizaci_n_comercial__c = true;
+            
         }
         update opportunitiesToUpdate;
     }*/
