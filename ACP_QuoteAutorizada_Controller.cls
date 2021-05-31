@@ -9,6 +9,7 @@ History
 
 21/01/2021    	Saúl Alarcón             Nueva clase que se utilizara para actualizar el estado de las oportunidades
 										 relacionadas con las quotes autorizadas
+                                         Sergio Perera García cambios
 ---------------------------------------------------------------------------------------------------------------*/
 
 public class ACP_QuoteAutorizada_Controller {
